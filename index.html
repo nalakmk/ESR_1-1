@@ -192,6 +192,8 @@
     </div>
 
     <script>
+ document.addEventListener('DOMContentLoaded', () => {
+
         const stories = {
             importance_of_reading: {
                 genre: "Opinion / Education",
@@ -278,7 +280,7 @@
         let recordedAudioPlayer = null; 
 
        // ▼ 아래 코드로 통째로 바꾸세요.
-document.addEventListener('DOMContentLoaded', () => {
+
     const firstStoryKey = Object.keys(stories)[0];
     if (firstStoryKey) {
         const firstStory = stories[firstStoryKey];
@@ -305,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     updateButtonStates();
-});
+
 
         startButton.addEventListener('click', enterApp);
         storySelect.addEventListener('change', loadStory);
@@ -699,6 +701,7 @@ function sendData() {
                  }
             }
         }
+});
     </script>
 </body>
 </html>
