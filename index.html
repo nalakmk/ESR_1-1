@@ -93,7 +93,7 @@
             margin-bottom: 15px; border-bottom: 1px dashed #e0e0e0; padding-bottom: 10px; display: flex; align-items: baseline;
         }
         .sentence-group:last-child { border-bottom: none; }
-        .sentence-number { font-weight: bold; color: #3498db; margin-right: 8px; font-size: 0.9em; opacity: 0.8; }
+        .sentence-number { font-weight: bold; color: var(--secondary-color); margin-right: 8px; font-size: 0.9em; opacity: 0.8; }
         .korean-translation-text { color: #78909c; font-size: 0.9em; font-style: italic; margin-left: 2px; }
         
         .hidden { display: none !important; }
@@ -151,9 +151,9 @@
         <label for="storySelect">Choose a story:</label>
         <select id="storySelect">
             <option value="">-- Select a story --</option>
-            <option value="our_community">Our Community</option>
-            <option value="saving_water">Saving Water</option>
-            <option value="the_wonderful_library">The Wonderful Library</option>
+            <option value="importance_of_reading">The Importance of Reading</option>
+            <option value="pets_are_friends">Pets are Great Friends</option>
+            <option value="why_sleep_early">Why We Should Sleep Early</option>
         </select>
         
         <div id="mode-selection" style="display: none;">
@@ -193,38 +193,42 @@
 
     <script>
         const stories = {
-            our_community: {
-                genre: "Social Studies",
+            importance_of_reading: {
+                genre: "Opinion / Education",
                 level: "ESR Level 1-1", 
                 sentences: [ 
-                    { parts: [ { english: "Our community is", korean: "우리 지역사회는" }, { english: "like a big family.", korean: "큰 가족 같아요." } ] },
-                    { parts: [ { english: "Everyone in the community", korean: "지역사회의 모든 사람은" }, { english: "has a part to play.", korean: "맡은 역할이 있어요." } ] },
-                    { parts: [ { english: "Doctors help sick people", korean: "의사들은 아픈 사람들이" }, { english: "get better,", korean: "나아지도록 돕고," }, { english: "and teachers help kids", korean: "선생님들은 아이들이" }, { english: "learn new things.", korean: "새로운 것을 배우도록 도와줘요." } ] },
-                    { parts: [ { english: "We also have police officers", korean: "우리에겐 또한 경찰관들이 있어요" }, { english: "who keep us safe.", korean: "우리를 안전하게 지켜주는." } ] },
-                    { parts: [ { english: "When we all work together,", korean: "우리 모두가 함께 일할 때," }, { english: "our community becomes a better place", korean: "우리 지역사회는 더 나은 곳이 돼요" }, { english: "for everyone to live and grow.", korean: "모두가 살고 성장하기에." } ] }
+                    { parts: [ { english: "Reading is", korean: "독서는" }, { english: "very important.", korean: "매우 중요해요." } ] },
+                    { parts: [ { english: "Books teach us", korean: "책은 우리에게 가르쳐줘요" }, { english: "new things.", korean: "새로운 것들을." } ] },
+                    { parts: [ { english: "We can learn about", korean: "우리는 배울 수 있어요" }, { english: "animals and space.", korean: "동물과 우주에 대해." } ] },
+                    { parts: [ { english: "Reading helps us", korean: "독서는 우리를 도와줘요" }, { english: "imagine.", korean: "상상하도록." } ] },
+                    { parts: [ { english: "It makes our minds", korean: "그것은 우리의 마음(생각)을" }, { english: "bigger.", korean: "더 크게 만들어요." } ] },
+                    { parts: [ { english: "Everyone should read", korean: "모두가 읽어야 해요" }, { english: "every day.", korean: "매일." } ] },
+                    { parts: [ { english: "It makes us smarter.", korean: "그것은 우리를 더 똑똑하게 만들어요." } ] }
                 ]
             },
-            saving_water: {
-                genre: "Science / Environment",
+            pets_are_friends: {
+                genre: "Opinion / Animals",
                 level: "ESR Level 1-1", 
                 sentences: [
-                    { parts: [ { english: "Water is very important", korean: "물은 매우 중요해요" }, { english: "for all living things.", korean: "모든 살아있는 것들에게." } ] },
-                    { parts: [ { english: "We need water", korean: "우리는 물이 필요해요" }, { english: "to drink, to cook, and to wash.", korean: "마시고, 요리하고, 씻기 위해." } ] },
-                    { parts: [ { english: "But there is only so much", korean: "하지만 세상에는" }, { english: "clean water in the world.", korean: "깨끗한 물이 한정되어 있어요." } ] },
-                    { parts: [ { english: "It’s important to save water", korean: "물을 아끼는 것이 중요해요" }, { english: "whenever we can.", korean: "우리가 할 수 있을 때마다." } ] },
-                    { parts: [ { english: "Taking shorter showers", korean: "샤워를 짧게 하거나" }, { english: "or turning off the faucet", korean: "수도꼭지를 잠그는 것이" }, { english: "while brushing teeth can help.", korean: "양치하는 동안에 도움이 될 수 있어요." } ] },
-                    { parts: [ { english: "Every little bit", korean: "아주 작은 노력 하나하나가" }, { english: "makes a difference.", korean: "변화를 만들어요." } ] }
+                    { parts: [ { english: "I think", korean: "나는 생각해요" }, { english: "pets are great friends.", korean: "반려동물은 훌륭한 친구라고." } ] },
+                    { parts: [ { english: "Dogs can play", korean: "개는 놀 수 있어요" }, { english: "with us.", korean: "우리와 함께." } ] },
+                    { parts: [ { english: "Cats can cuddle.", korean: "고양이는 껴안을 수 있어요." } ] },
+                    { parts: [ { english: "They make us", korean: "그들은 우리를 만들어요" }, { english: "feel happy.", korean: "행복하게 느끼도록." } ] },
+                    { parts: [ { english: "Pets teach us", korean: "반려동물은 우리에게 가르쳐줘요" }, { english: "to be kind.", korean: "친절해지는 법을." } ] },
+                    { parts: [ { english: "They need our love", korean: "그들은 우리의 사랑과" }, { english: "and care.", korean: "보살핌이 필요해요." } ] },
+                    { parts: [ { english: "Every family should have", korean: "모든 가족은 가져야 해요" }, { english: "a pet.", korean: "반려동물을." } ] }
                 ]
             },
-            the_wonderful_library: {
-                genre: "Community / Education",
+            why_sleep_early: {
+                genre: "Health / Opinion",
                 level: "ESR Level 1-1", 
                 sentences: [
-                    { parts: [ { english: "The library is a wonderful place", korean: "도서관은 멋진 장소예요" }, { english: "in our town.", korean: "우리 마을에서." } ] },
-                    { parts: [ { english: "It has thousands of books", korean: "그곳에는 수천 권의 책이 있어요" }, { english: "for everyone to read.", korean: "모두가 읽을 수 있는." } ] },
-                    { parts: [ { english: "You can find stories,", korean: "당신은 이야기를 찾고," }, { english: "learn about history,", korean: "역사에 대해 배우고," }, { english: "or discover new facts.", korean: "새로운 사실들을 발견할 수 있어요." } ] },
-                    { parts: [ { english: "Librarians are there", korean: "사서들은 그곳에 있어요" }, { english: "to help you find", korean: "당신이 찾는 것을 돕기 위해" }, { english: "what you need.", korean: "당신이 필요한 것을." } ] },
-                    { parts: [ { english: "Libraries are not just about books;", korean: "도서관은 단지 책에 관한 곳이 아니에요;" }, { english: "they are places", korean: "그곳은 장소예요" }, { english: "where people can learn", korean: "사람들이 배우고" }, { english: "and share ideas freely.", korean: "자유롭게 아이디어를 나눌 수 있는." } ] }
+                    { parts: [ { english: "Going to bed early", korean: "일찍 자러 가는 것은" }, { english: "is good for you.", korean: "당신에게 좋아요." } ] },
+                    { parts: [ { english: "When you sleep early,", korean: "당신이 일찍 잘 때," }, { english: "your body rests.", korean: "당신의 몸은 쉬어요." } ] },
+                    { parts: [ { english: "You wake up", korean: "당신은 일어나요" }, { english: "feeling strong.", korean: "힘이 나는 것을 느끼며." } ] },
+                    { parts: [ { english: "You can learn better", korean: "더 잘 배울 수 있어요" }, { english: "at school.", korean: "학교에서." } ] },
+                    { parts: [ { english: "Being tired", korean: "피곤한 것은" }, { english: "makes you grumpy.", korean: "당신을 짜증나게 만들어요." } ] },
+                    { parts: [ { english: "So, let's all try", korean: "그러니, 우리 모두 노력해요" }, { english: "to sleep early tonight!", korean: "오늘 밤 일찍 자도록!" } ] }
                 ]
             }
         };
@@ -273,20 +277,35 @@
         let mediaStream = null;
         let recordedAudioPlayer = null; 
 
-        // --- EVENT LISTENERS ---
-        document.addEventListener('DOMContentLoaded', () => {
-            const firstStoryKey = Object.keys(stories)[0];
-            if(firstStoryKey) {
-                const firstStory = stories[firstStoryKey];
-                if(levelDisplayStart && firstStory.level) {
-                    const levelParts = firstStory.level.split(' ');
-                    const levelText = levelParts.slice(0, 2).join(' ');
-                    const levelNumber = levelParts[2];
-                    levelDisplayStart.innerHTML = `${levelText} <span style="color: #F08080;">${levelNumber}</span>`;
-                }
+       // ▼ 아래 코드로 통째로 바꾸세요.
+document.addEventListener('DOMContentLoaded', () => {
+    const firstStoryKey = Object.keys(stories)[0];
+    if (firstStoryKey) {
+        const firstStory = stories[firstStoryKey];
+        if (levelDisplayStart && firstStory.level) {
+            const levelParts = firstStory.level.split(' ');
+            const levelText = levelParts.slice(0, 2).join(' ');
+            const levelNumber = levelParts[2];
+
+            let numberColor = '#333'; // 기본 검은색
+
+            if (levelNumber.startsWith('1')) {
+                numberColor = '#F08080'; // 1레벨: 연한 산호색
+            } else if (levelNumber.startsWith('2')) {
+                numberColor = '#2ecc71'; // 2레벨: 초록색
+            } else if (levelNumber.startsWith('3')) {
+                numberColor = '#f39c12'; // 3레벨: 주황색
+            } else if (levelNumber.startsWith('4')) {
+                numberColor = '#3498db'; // 4레벨: 파란색
+            } else if (levelNumber.startsWith('5')) {
+                numberColor = '#9b59b6'; // 5레벨: 보라색
             }
-            updateButtonStates();
-        });
+
+            levelDisplayStart.innerHTML = `${levelText} <span style="color: ${numberColor};">${levelNumber}</span>`;
+        }
+    }
+    updateButtonStates();
+});
 
         startButton.addEventListener('click', enterApp);
         storySelect.addEventListener('change', loadStory);
@@ -319,9 +338,7 @@
                 currentStoryData = stories[storyId];
                 modeSelectionContainer.style.display = 'block';
                 timerContainer.style.display = 'flex';
-                // 모드 선택 버튼이 활성화된 것이 없으면 1번을 기본으로 설정
-                const activeButton = document.querySelector('.mode-btn.active') || document.querySelector('.mode-btn[data-mode="1"]');
-                setMode(activeButton);
+                setMode(document.querySelector('.mode-btn.active') || document.querySelector('.mode-btn[data-mode="1"]'));
             } else {
                 currentStoryData = { sentences: [] };
                 modeSelectionContainer.style.display = 'none';
@@ -332,21 +349,21 @@
             }
         }
 
-        // [수정됨] 모드 변경 시 상태를 완전히 초기화하고 화면을 다시 그립니다.
-        function setMode(clickedButton) {
-            if (isTimerRunning) stopSession(); 
-            
-            currentMode = parseInt(clickedButton.dataset.mode, 10);
-            modeButtons.forEach(btn => btn.classList.remove('active'));
-            clickedButton.classList.add('active');
-            
-            resetSession(); // isAnswerRevealed가 여기서 false로 초기화됨
-            currentSentenceIndex = 0;
-            currentPartIndexInSentence = 0;
-            
-            setupUIForMode();
-            displayStory(); // 초기화된 상태로 화면을 그림
-        }
+      function setMode(clickedButton) {
+    if (isTimerRunning) stopSession(); 
+    
+    currentMode = parseInt(clickedButton.dataset.mode, 10);
+    modeButtons.forEach(btn => btn.classList.remove('active'));
+    clickedButton.classList.add('active');
+    
+    // ▼ 모드 변경 시 상태를 완전히 초기화하고 화면을 다시 그립니다.
+    resetSession(); // isAnswerRevealed가 여기서 false로 초기화됨
+    currentSentenceIndex = 0;
+    currentPartIndexInSentence = 0;
+    
+    setupUIForMode();
+    displayStory(); // 초기화된 상태로 화면을 그림
+}
         
         function setupUIForMode() {
             mode3AnswerBtn.style.display = 'none';
@@ -356,8 +373,6 @@
             if (!hasStory) return;
 
             let statusText = "";
-            let nextButtonText = "Next Part";
-            
             switch(currentMode) {
                 case 1: statusText = "모드 1: '학습 시작'을 누르고, 영어를 듣고 따라 말하세요."; break;
                 case 2: statusText = "모드 2: 해석을 보면서 영어를 듣고 따라 말하세요."; break;
@@ -365,86 +380,81 @@
                     mode3AnswerBtn.style.display = 'inline-flex';
                     statusText = "모드 3: 영어를 듣고 해석을 말해본 후, '해석 확인'을 누르세요.";
                     break;
-                case 4: 
-                    statusText = "모드 4: 한글을 보고 영어로 말해본 후, '정답 확인'을 누르세요.";
-                    nextButtonText = "정답 확인"; // 4번 모드 초기 버튼 텍스트
-                    break;
+                case 4: statusText = "모드 4: 한글을 보고 영어로 말해본 후, '정답 확인'을 누르세요."; break;
             }
             statusDisplay.textContent = statusText;
-            nextBtn.textContent = nextButtonText;
             updateButtonStates();
         }
 
-        // [수정됨] 4번 모드: 먼저 영어를 숨기고, 정답 확인 시에만 보여줍니다.
-        function displayStory() {
-            storyDisplay.innerHTML = '';
-            if (!currentStoryData.sentences || currentStoryData.sentences.length === 0) return;
+       function displayStory() {
+    storyDisplay.innerHTML = '';
+    if (!currentStoryData.sentences || currentStoryData.sentences.length === 0) return;
 
-            currentStoryData.sentences.forEach((sentence, sentenceIndex) => {
-                const sentenceGroup = document.createElement('div');
-                sentenceGroup.classList.add('sentence-group');
+    currentStoryData.sentences.forEach((sentence, sentenceIndex) => {
+        const sentenceGroup = document.createElement('div');
+        sentenceGroup.classList.add('sentence-group');
 
-                const sentenceNumberSpan = document.createElement('span');
-                sentenceNumberSpan.textContent = `${sentenceIndex + 1}.`;
-                sentenceNumberSpan.classList.add('sentence-number');
-                sentenceGroup.appendChild(sentenceNumberSpan);
+        const sentenceNumberSpan = document.createElement('span');
+        sentenceNumberSpan.textContent = `${sentenceIndex + 1}.`;
+        sentenceNumberSpan.classList.add('sentence-number');
+        sentenceGroup.appendChild(sentenceNumberSpan);
 
-                const chunksWrapper = document.createElement('div');
-                chunksWrapper.style.cssText = 'display: inline-block; vertical-align: top; width: calc(100% - 35px);';
+        const chunksWrapper = document.createElement('div');
+        chunksWrapper.style.cssText = 'display: inline-block; vertical-align: top; width: calc(100% - 35px);';
 
-                sentence.parts.forEach((part, partIndex) => {
-                    const isCurrent = (sentenceIndex === currentSentenceIndex && partIndex === currentPartIndexInSentence);
-                    
-                    const chunkPairContainer = document.createElement('span'); 
-                    chunkPairContainer.classList.add('chunk-pair-container');
-                    
-                    const englishSpan = document.createElement('span');
-                    englishSpan.textContent = part.english;
-                    englishSpan.classList.add('english-chunk-text');
-                    
-                    const koreanSpan = document.createElement('span');
-                    koreanSpan.textContent = ` (${part.korean})`;
-                    koreanSpan.classList.add('korean-translation-text');
-
-                    // --- 모드별 표시/숨김 로직 ---
-                    if (currentMode === 1) {
-                        koreanSpan.classList.add('hidden');
-                    } else if (currentMode === 3) {
-                        if (!isCurrent || (isCurrent && !isAnswerRevealed)) {
-                            koreanSpan.classList.add('hidden');
-                        }
-                    } else if (currentMode === 4) {
-                        englishSpan.classList.add('hidden-english');
-                        if (isCurrent && isAnswerRevealed) {
-                            englishSpan.classList.remove('hidden-english');
-                        }
-                    }
-                    
-                    if (isCurrent) {
-                        chunkPairContainer.classList.add('current-chunk-highlight');
-                    }
-
-                    chunkPairContainer.appendChild(englishSpan);
-                    chunkPairContainer.appendChild(koreanSpan);
-                    chunksWrapper.appendChild(chunkPairContainer);
-                    
-                    if (partIndex < sentence.parts.length - 1) {
-                        const divider = document.createElement('span');
-                        divider.textContent = ' / ';
-                        divider.classList.add('chunk-divider');
-                        chunksWrapper.appendChild(divider);
-                    }
-                });
-                sentenceGroup.appendChild(chunksWrapper);
-                storyDisplay.appendChild(sentenceGroup);
-            });
+        sentence.parts.forEach((part, partIndex) => {
+            const isCurrent = (sentenceIndex === currentSentenceIndex && partIndex === currentPartIndexInSentence);
             
-            const currentHighlightElement = storyDisplay.querySelector('.current-chunk-highlight');
-            if (currentHighlightElement) {
-                currentHighlightElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        }
+            const chunkPairContainer = document.createElement('span'); 
+            chunkPairContainer.classList.add('chunk-pair-container');
+            
+            const englishSpan = document.createElement('span');
+            englishSpan.textContent = part.english;
+            englishSpan.classList.add('english-chunk-text');
+            
+            const koreanSpan = document.createElement('span');
+            koreanSpan.textContent = ` (${part.korean})`;
+            koreanSpan.classList.add('korean-translation-text');
 
+            // --- [핵심 수정] 모드별 표시/숨김 로직 ---
+            if (currentMode === 1) {
+                koreanSpan.classList.add('hidden');
+            } else if (currentMode === 3) {
+                if (!isCurrent || (isCurrent && !isAnswerRevealed)) {
+                    koreanSpan.classList.add('hidden');
+                }
+            } else if (currentMode === 4) {
+                // 4번 모드: 먼저 영어를 숨기고, 정답 확인 시에만 보여줍니다.
+                englishSpan.classList.add('hidden-english');
+                if (isCurrent && isAnswerRevealed) {
+                    englishSpan.classList.remove('hidden-english');
+                }
+            }
+            
+            if (isCurrent) {
+                chunkPairContainer.classList.add('current-chunk-highlight');
+            }
+
+            chunkPairContainer.appendChild(englishSpan);
+            chunkPairContainer.appendChild(koreanSpan);
+            chunksWrapper.appendChild(chunkPairContainer);
+            
+            if (partIndex < sentence.parts.length - 1) {
+                const divider = document.createElement('span');
+                divider.textContent = ' / ';
+                divider.classList.add('chunk-divider');
+                chunksWrapper.appendChild(divider);
+            }
+        });
+        sentenceGroup.appendChild(chunksWrapper);
+        storyDisplay.appendChild(sentenceGroup);
+    });
+    
+    const currentHighlightElement = storyDisplay.querySelector('.current-chunk-highlight');
+    if (currentHighlightElement) {
+        currentHighlightElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
         // --- NAVIGATION & PLAYBACK ---
         function playCurrentPart() {
             window.speechSynthesis.cancel(); 
@@ -469,14 +479,9 @@
         }
         
         function navigatePart(direction) {
-            if (!isTimerRunning) return;
-            isAnswerRevealed = false;
-            if (currentMode === 4) {
-                nextBtn.textContent = '정답 확인';
-            } else {
-                nextBtn.textContent = 'Next Part';
-            }
-            
+             if (!isTimerRunning) return;
+             isAnswerRevealed = false;
+             if (currentMode === 4) nextBtn.textContent = '정답 확인';
 
             const isForward = direction === 1;
             let sentence = currentStoryData.sentences[currentSentenceIndex];
@@ -514,43 +519,55 @@
             if (currentMode === 4) playCurrentPart();
         }
         
-        function sendData() {
-            if (!recordedAudioURL) {
-                alert("전송할 녹음 데이터가 없습니다. 먼저 학습을 완료해주세요.");
-                return;
-            }
-            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwymaXNEt4J-84X6Rgm_29d3ynDw_enOIJ9n10kWyRyyjmbw0RMip0_LH5OF0A_HweS/exec';
-            const dataToSend = {
-                name: userName,
-                level: currentStoryData.level,
-                time: stopwatchDisplay.textContent,
-                storyTitle: storySelect.options[storySelect.selectedIndex].text,
-                mode: currentMode
-            };
-            sendDataBtn.disabled = true;
-            sendDataBtn.textContent = '전송 중...';
-            fetch(SCRIPT_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                cache: 'no-cache',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                redirect: 'follow',
-                body: JSON.stringify(dataToSend)
-            })
-            .then(res => {
-                alert(`${userName}님의 학습 데이터가 성공적으로 전송되었습니다!`);
-                statusDisplay.textContent = "학습 데이터가 성공적으로 전송되었습니다.";
-                sendDataBtn.textContent = '전송 완료';
-            })
-            .catch(err => {
-                console.error('Error sending data:', err);
-                alert('데이터 전송 중 오류가 발생했습니다. 관리자에게 문의하세요.');
-                sendDataBtn.disabled = false;
-                sendDataBtn.textContent = '전송';
-            });
-        }
+      // --- DATA SEND FUNCTION ---
+function sendData() {
+    // 1. 전송할 녹음 데이터가 있는지 확인합니다.
+    if (!recordedAudioURL) {
+        alert("전송할 녹음 데이터가 없습니다. 먼저 학습을 완료해주세요.");
+        return;
+    }
+
+    // 2. Apps Script 웹 앱 URL을 설정합니다. (보내주신 주소로 적용됨)
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwymaXNEt4J-84X6Rgm_29d3ynDw_enOIJ9n10kWyRyyjmbw0RMip0_LH5OF0A_HweS/exec';
+
+    // 3. 구글 시트로 보낼 데이터 객체를 생성합니다.
+    const dataToSend = {
+        name: userName,
+        level: currentStoryData.level,
+        time: stopwatchDisplay.textContent,
+        storyTitle: storySelect.options[storySelect.selectedIndex].text,
+        mode: currentMode
+    };
+
+    // 4. 전송 버튼을 비활성화하고 텍스트를 변경하여 중복 전송을 방지합니다.
+    sendDataBtn.disabled = true;
+    sendDataBtn.textContent = '전송 중...';
+
+    // 5. fetch API를 사용하여 Apps Script로 데이터를 비동기 전송합니다.
+    fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        cache: 'no-cache',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        redirect: 'follow',
+        body: JSON.stringify(dataToSend)
+    })
+    .then(res => {
+        // 성공적으로 전송되었을 때
+        alert(`${userName}님의 학습 데이터가 성공적으로 전송되었습니다!`);
+        statusDisplay.textContent = "학습 데이터가 성공적으로 전송되었습니다.";
+        sendDataBtn.textContent = '전송 완료';
+    })
+    .catch(err => {
+        // 에러가 발생했을 때
+        console.error('Error sending data:', err);
+        alert('데이터 전송 중 오류가 발생했습니다. 관리자에게 문의하세요.');
+        sendDataBtn.disabled = false; // 에러 시 다시 시도할 수 있도록 버튼 활성화
+        sendDataBtn.textContent = '전송';
+    });
+}
 
 
         // --- SESSION, TIMER & RECORDER ---
@@ -664,25 +681,14 @@
             nextBtn.disabled = !isTimerRunning;
             mode3AnswerBtn.disabled = !isTimerRunning;
             
-            if(isTimerRunning){
-                if (currentMode !== 4) {
-                    nextBtn.textContent = 'Next Part';
-                } else if (!isAnswerRevealed) {
-                    nextBtn.textContent = '정답 확인';
-                } else {
-                    nextBtn.textContent = '다음 문제';
-                }
-            }
-
+            if (currentMode !== 4) nextBtn.textContent = 'Next Part';
 
             if (isTimerRunning) {
                 const lastSentenceIdx = currentStoryData.sentences.length - 1;
-                if (lastSentenceIdx >= 0) {
-                    const lastPartInLastSentence = currentStoryData.sentences[lastSentenceIdx].parts.length - 1;
-                    if (currentSentenceIndex === lastSentenceIdx && currentPartIndexInSentence === lastPartInLastSentence) {
-                        if (currentMode !== 4 || (currentMode === 4 && isAnswerRevealed)) {
-                            nextBtn.disabled = true;
-                        }
+                const lastPartInLastSentence = currentStoryData.sentences[lastSentenceIdx].parts.length - 1;
+                if (currentSentenceIndex === lastSentenceIdx && currentPartIndexInSentence === lastPartInLastSentence) {
+                    if (currentMode !== 4 || (currentMode === 4 && isAnswerRevealed)) {
+                        nextBtn.disabled = true;
                     }
                 }
             } else {
