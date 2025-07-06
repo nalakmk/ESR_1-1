@@ -136,7 +136,7 @@
 <body>
     <div id="startScreen">
         <div id="logo-container">
-            <img src="/ESR_1-1/mainlogo.png" alt="Academy Logo" style="max-width:180px; height:auto;">
+            <img src="mainlogo.png" alt="Academy Logo" style="max-width:180px; height:auto;">
         </div>
         <h1>English Story Reader!</h1>
         <div id="levelDisplayStart">
@@ -192,8 +192,6 @@
     </div>
 
     <script>
- document.addEventListener('DOMContentLoaded', () => {
-
         const stories = {
             importance_of_reading: {
                 genre: "Opinion / Education",
@@ -280,7 +278,7 @@
         let recordedAudioPlayer = null; 
 
        // ▼ 아래 코드로 통째로 바꾸세요.
-
+document.addEventListener('DOMContentLoaded', () => {
     const firstStoryKey = Object.keys(stories)[0];
     if (firstStoryKey) {
         const firstStory = stories[firstStoryKey];
@@ -307,7 +305,7 @@
         }
     }
     updateButtonStates();
-
+});
 
         startButton.addEventListener('click', enterApp);
         storySelect.addEventListener('change', loadStory);
@@ -701,7 +699,6 @@ function sendData() {
                  }
             }
         }
-});
     </script>
 </body>
 </html>
